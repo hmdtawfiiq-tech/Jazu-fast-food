@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, Download } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 
-import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate, useLocation, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate, Navigate, useLocation, Link } from 'react-router-dom';
 import { menuData, sortByPrice } from './constants';
 
 function MenuPage() {
@@ -214,7 +214,7 @@ function AdminQRPage() {
     img.src = 'data:image/svg+xml;base64,' + svg64;
   };
 
-  const publicUrl = `${window.location.origin}/menu`;
+  const publicUrl = `${window.location.origin}${window.location.pathname}#/menu`;
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] flex flex-col items-center justify-center p-6 text-center">
